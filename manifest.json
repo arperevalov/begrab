@@ -1,0 +1,22 @@
+{
+    "name": "Begrab",
+    "description": "Download pics right from Behance",
+    "version": "1.0",
+    "manifest_version": 2,
+    "background": {
+      "persistent": true,
+      "scripts": [
+          "background.js"
+      ]
+    },
+    "permissions": ["activeTab", "downloads","tabs", "background"],
+
+    "content_scripts": [
+      {
+        "matches": ["https://*.behance.net/*"],
+        "run_at": "document_end",
+        "css": ["content.css"],
+        "js": ["content.js"]
+      }
+    ]
+  }
